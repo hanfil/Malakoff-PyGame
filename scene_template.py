@@ -56,7 +56,7 @@ class scene:
 
         self.player = player(self.screen_width / 2, self.screen_height / 2, self.screen)
         self.player.load_sprite("img/student.png")
-        self.map1 = JSON_load("Map 2\Map 2.json", self.screen, (self.screen_width, self.screen_height))
+        self.map1 = JSON_load("maps/Map 2/", self.screen, (self.screen_width, self.screen_height))
 
         self.init_npc()
         self.init_containers()

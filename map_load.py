@@ -11,7 +11,9 @@
 # !/usr/bin/env python
 
 # from object_template import*
-import json, pygame, sys
+import json
+import pygame
+import sys
 
 
 class Tile(pygame.sprite.Sprite):
@@ -85,7 +87,7 @@ class JSON_load:
     def __init__(self, Map, screen, SCREENSIZE):
         self.screen = screen
         global all_layers, mapborder, collision_layers, player, current_layer
-        mapfile = open(Map).read()
+        mapfile = open(Map+"Map 2.json").read()
         mapdict = json.loads(mapfile)
 
         tilesets = mapdict["tilesets"]
@@ -96,7 +98,7 @@ class JSON_load:
         all_tiles_from_sets = []
 
         for tileset in tilesets:
-            tileset_image = pygame.image.load("Map 2/" + tileset["image"])
+            tileset_image = pygame.image.load(Map + tileset["image"])
             imageheight = tileset["imageheight"]
             imagewidth = tileset["imagewidth"]
             tilewidth = tileset["tilewidth"]
